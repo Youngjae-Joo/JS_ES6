@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3, 4];
+
+        let [a, b, c, d] = arr;
+        console.log(a);//1
+        console.log(b);//2
+        console.log(c);//3
+        console.log(d);//4
+        console.log('---------------------');
+
+        let [a1, a2] = arr;
+        console.log(a1);//1
+        console.log(a2);//2
+        console.log('---------------------');
+
+        let [e, , , h] = arr;
+        console.log(e);//1
+        console.log(h);//4
+        console.log('---------------------');
+
+        let [...x] = arr;
+        console.log(x);//배열. [1,2,3,4]
+        console.log('---------------------');
+
+        let [k1, k2, ...k3] = arr;
+        console.log(k1);//1
+        console.log(k2);//2
+        console.log(k3);//배열, [3,4]
+
+
+
+        function useState(){
+            return [1,function() {}];
+        }
+
+        let [n1, n2]=useState();
+
+        console.log(n1, n2); //1, 함수
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = { name: "홍길동", age: 20 };
+
+        /*
+        console.log(obj.name);
+        console.log(obj["name"]);
+        */
+
+        // let {name}=obj;
+        // console.log(name);
+
+        // let {name,age}=obj;
+        // console.log(name,age);
+
+        // let{...arr}=obj;
+        // console.log(arr); //객체 그대로.
+
+
+        let person = {
+            name: "홍길동",
+            age: 30,
+            job: ["js", "css"],
+            info: { id: "aaa123" }
+        };
+
+
+        let { name, job, info } = person;
+        console.log(name, job, info);
+
+        console.log(name, job, info.id); 
+        //또는
+        // let {id} = info;
+        // console.log(id);//키 id의 값인 aaa123이 나옴
+        // let{id:idf}=info;
+        // console.log(idf);//마찬가지로, 이름을 idf로 바꾸어서 키의 값 출력
+        //이 과정을 합쳐서 뽑아내는 것이 가능
+        let{info:{id:x}}=person;
+        console.log("뽑아낸 "+x);
+
+
+        //객체의 값을 다른 이름으로 가지고 나오기
+        let { name: aaa } = person; //name을 aaa이름으로 가지고 나오기
+        console.log(aaa);//홍길동
+
+        let { name: bbb, job: jjj } = person;
+        console.log(bbb, jjj);
+
+    </script>
+</body>
+
+</html>

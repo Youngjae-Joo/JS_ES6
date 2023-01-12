@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(x, y, z) {
+            return x + y + z;
+        }
+
+        let arr = [1, 2, 3];
+        //sum(arr[0]+arr[1]+arr[2]);
+
+        console.log(sum(...arr));//매개변수로 1,2,3
+        console.log(sum(10,...arr));// JS는 매개변수의 규칙이 철저하지 않음. 10,1,2,3으로 들어가 10이 x의 자리에, 1,2가 y,z의 자리에 들어가 13이 나온다
+
+        //함수를 선언시 전개구문 사용 -가변적매개변수(단, 반드시 맨 마지막에 선언해야 한다.) 매개변수로 전개구문 1개만 사용하는 것은 가능함.
+        function sum2(x, ...y){//...y는 여러개가 들어올 수 있다는 뜻. 가변적임.
+            return [x, ...y];
+        }
+        
+        console.log(sum2(1));
+        console.log(sum2(1,2));
+        console.log(sum2(1,2,3,4)); //전부 가능
+
+        //함수의 default 매개변수
+        function sum3(x, y=10,z=100){
+            return x+y+z;
+        }
+        let arr2=[1,2];
+        console.log(sum3(1)); //111 ->x에 1을 받고 기본값 10과 100을 더함
+        console.log(sum3(1,2)); //103 ->기본값 y=10이 2로 대체
+        console.log(sum3(1,2,3)); //6 ->기본값 y=10과 z=100이 2와 3으로 대체
+        console.log(sum3(...arr2)); //103 ->나열된 1과 2가 x와 y에 들어감. 3은 받지 않음
+        console.log(sum3(4,5,6,7,8))//15 ->앞의 4,5,6만 더함
+    
+
+
+    </script>
+</body>
+
+</html>

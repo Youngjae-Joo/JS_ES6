@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ["a", "b", "c"];
+
+        for (let i in arr) {
+            console.log(i); //index
+        }
+
+        console.log('---------------------------');
+
+        for (let i of arr) {
+            console.log(i); //value
+        }
+
+        console.log('---------------------------');
+
+        //forof는 문자열도 가능
+        for (let i of "hello world") {
+            console.log(i);
+        }
+
+        console.log('---------------------------');
+
+        let person = [
+            { id: "aaa", age: 10 },
+            { id: "bbb", age: 20 }
+        ];
+        //구조분해할당
+        for (let { id, age } of person) {
+            console.log(id);
+            console.log(age);
+        }
+        console.log('---------------------------');
+        //객체를 반복할순 없음
+        let obj ={a:1, b:2};
+        // for(let i of obj){
+        //     console.log(i);
+        // }
+        //err
+        //객체는 for in으로 돌린다.
+            // for(let i in obj){
+            //     console.log(i); //키가 나옴
+            // }
+
+    </script>
+</body>
+
+</html>

@@ -30,11 +30,7 @@
         var lis = document.querySelectorAll(".list li");
         //1. 즉시실행함수로 li의 i 뽑기. 이 방법은 js map을 다룰 때 사용하기 때문에 알아두어야 함.
         // for(var i=0;i<lis.length;i++){
-        //     (function(x){
-        //         lis[x].onclick = function(){
-        //             console.log(x);
-        //         }
-        //     })(i);
+        //     (function(x){lis[x].onclick = function(){console.log(x);}})(i); //익명함수(매개변수); ->실행하는 것
         // }
         
         //2. let변수로 i 뽑기
